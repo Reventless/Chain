@@ -18,15 +18,15 @@ $block = [
 function mine($block){
     $hashedblock = "hello";
     $hashedminedblock = "test";
+    var_dump(serialize($block));
     while ($hashedminedblock != $hashedblock){
         $block['nonce'] = rand(0, 9999999);
         $hashedblock = hash("sha256", serialize($block));
-        $minedblock = "";
-        $hasedminedblock = $hashedblock;
-        $hasedminedblock[0] ="1";
-        $hasedminedblock[1] ="3";
-        $hasedminedblock[2] ="3";
-        $hasedminedblock[3] ="7";
+        $hashedminedblock = $hashedblock;
+        $hashedminedblock[0] ="1";
+        $hashedminedblock[1] ="3";
+        $hashedminedblock[2] ="3";
+        $hashedminedblock[3] ="7";
     }
 
     echo "MINED!";
