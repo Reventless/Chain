@@ -15,22 +15,18 @@ $block = [
     "hash" => "",
 ];
 
+// nur ersten 4 stellen vergleichen und nur bestimmten Inhalt hashen -> in einen String pasten, den hashen
 function mine($block){
     $hashedblock = "hello";
     $hashedminedblock = "test";
-    while ($hashedminedblock != $hashedblock){
+    $stringdump = "";
+    $stringdump = $block['number'].$block['data'].$block['nonce'];
+    while ($hashedblock[0] != 1 && $hashedblock[1] != 3 && $hashedblock[2] != 3 && $hashedblock[3] != 7 ){
         $block['nonce'] = rand(0, 9999999);
-        $hashedblock = hash("sha256", serialize($block));
-        $hashedminedblock = $hashedblock;
-        $hashedminedblock[0] ="1";
-        $hashedminedblock[1] ="3";
-        $hashedminedblock[2] ="3";
-        $hashedminedblock[3] ="7";
+        $hashedblock = hash("sha256", $stringdump);
+        var_dump($hashedblock);
     }
-
     echo "MINED!";
     echo $block['nonce'];
-
 }
 mine($block);
-
