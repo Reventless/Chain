@@ -15,7 +15,6 @@ $block = [
     "hash" => "",
 ];
 
-// nur ersten 4 stellen vergleichen und nur bestimmten Inhalt hashen -> in einen String pasten, den hashen
 function mine($block){
     $hashedblock = "hello";
     $hashedminedblock = "test";
