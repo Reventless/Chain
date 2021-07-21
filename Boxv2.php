@@ -24,7 +24,7 @@ function mine($block){
         $hashedblock = hash("sha256", $stringdump);
         var_dump($hashedblock);
     }
-    echo "MINED!";
+    echo "MINED! ";
     echo $block['nonce'];
     echo "\n";
     echo $hashedblock;
