@@ -18,7 +18,7 @@ Block
         </h1>
         <div class="test" id="title">
              <p>
-                 <?php echo $block['nonce'] ?>
+                 <?php include $block['nonce'] ?>
              </p>
         </div>
     </body>
